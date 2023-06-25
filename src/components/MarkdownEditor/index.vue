@@ -4,7 +4,6 @@
 
 <script>
 // deps for editor
-
 import 'codemirror/lib/codemirror.css'
 import '@toast-ui/editor/dist/toastui-editor.css'
 import Editor from '@toast-ui/editor'
@@ -98,19 +97,19 @@ export default {
     destroyEditor() {
       if (!this.editor) return
       this.editor.off('change')
-      this.editor.remove()
+      this.editor.destroy()
     },
-    setMarkdown(value) {
+    setValue(value) {
       this.editor.setMarkdown(value)
     },
-    getMarkdown() {
+    getValue() {
       return this.editor.getMarkdown()
     },
     setHtml(value) {
       this.editor.setHtml(value)
     },
     getHtml() {
-      return this.editor.getHtml()
+      return this.editor.getHTML()
     }
   }
 }
